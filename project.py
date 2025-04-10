@@ -17,9 +17,9 @@ employee_data.columns = employee_data.columns.str.strip()
 print(employee_data.columns)
 
 data = {
-    "EMPLOYEE NAME": ["KYLE JONH", "PETER DOE", "TYNOE GREY", "ANNA COURTY","KIM SWAY", ],
+    "EMPLOYEE NAME": ["KYLE ", "KUDZI", "TYNOE ", "ANNA ","WESLEY ", ],
     "EMPLOYEE ID":["D766",  "D455" , "D677", "D966" , "D811"],
-    "EMAIL" : ["tinomudaishekutama2004@gmail.com","vincent@uncommon.org","chigurilyncia@gmail.com","chakurungamaelsie1@gmail.com","nyabungawesly@gmail.com"],      
+    "EMAIL" : ["tinomudaishekutama2004@gmail.com","vincent@uncommon.org","chigurilyncia@gmail.com","chakurungamaelsie1@gmail.com","nyabungawesley@gmail.com"],      
     "BASIC SALARY": [500 , 600 , 3000 , 4000 , 1000],
     "ALLOWANCE": [300 , 100 , 800 , 2000 , 900],
     "DEDUCTION" : [150 ,300 ,1000, 205 ,500],
@@ -91,13 +91,12 @@ def send_email_with_payslip(employee):
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(from_email, your_app_password)
+            server.login(from_email,"rgdeebyzbaaofsiu")
             server.send_message(msg)
             print(f"Payslip sent to {to_email}")
     except Exception as e:
         print(f"Failed to send email to {to_email}: {e}")
 
-# Loop through all employees
 for index, employee in df.iterrows():
     generate_pdf(employee)
     send_email_with_payslip(employee)
