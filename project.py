@@ -11,10 +11,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-name = "PAYSLIP COMPANY"
-employee_data = pd.read_excel('payslip.xlsx', engine='openpyxl')
-employee_data.columns = employee_data.columns.str.strip()
-print(employee_data.columns)
+
 
 data = {
     "EMPLOYEE NAME": ["KYLE ", "KUDZI", "TYNOE ", "ANNA ","WESLEY ", ],
@@ -28,6 +25,7 @@ data = {
     }
 
 df = pd.DataFrame(data)
+print(df)
 
 excel_file = "payslip.xlsx"
 
