@@ -95,7 +95,7 @@ def send_email_with_payslip(employee):
             server.send_message(msg)
             print(f"Payslip sent to {to_email}")
     except Exception as e:
-        print(f"Failed to send email to {to_email}: {e}")
+        print(f"Totally failed to send email to {to_email}: {e}")
 
 for index, employee in df.iterrows():
     generate_pdf(employee)
